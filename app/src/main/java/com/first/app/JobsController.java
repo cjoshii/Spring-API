@@ -69,9 +69,10 @@ public class JobsController {
      * @return Response with the location of the new job
      */
     @PostMapping
-    public ResponseEntity<Void> AddJob(@RequestBody Job job) {
-        var newJob = jobService.CreateJob(job);
-         URI location = ServletUriComponentsBuilder
+    public ResponseEntity<Void> AddJob(@RequestBody JobDTO job) {
+        var jobEntity = jobMapper.toEntity(job);
+        var newJob = jobService.CreateJob(jobEntity);
+        URI location = ServletUriComponentsBuilder
                         .fromCurrentRequest()
                         .path("/{id}")
                         .buildAndExpand(newJob.getId())

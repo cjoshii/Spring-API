@@ -14,6 +14,15 @@ public class JobDTO {
     private String title;
     private String description;
     private String location;
+    private CompanyDTO company;
+
+    public CompanyDTO getCompany() {
+        return company;
+    }
+
+    public void setCompany(CompanyDTO company) {
+        this.company = company;
+    }
 
     public String getTitle() {
         return title;

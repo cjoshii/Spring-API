@@ -19,6 +19,17 @@ public class Job {
     @Column(name = "location", length = 100, nullable = true)
     private String location;
 
+    @ManyToOne
+    private Company company;
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+    }
+
     public long getId() {
         return id;
     }

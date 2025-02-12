@@ -69,8 +69,9 @@ public class CompanyController {
      * @return Response entity with the location of the new company
      */
     @PostMapping
-    public ResponseEntity<Void> AddJob(@RequestBody Company company) {
-        var newCompany = companyService.CreateCompany(company);
+    public ResponseEntity<Void> AddJob(@RequestBody CompanyDTO company) {
+        var companyEntity = companyMapper.toEntity(company);
+        var newCompany = companyService.CreateCompany(companyEntity);
         URI location = ServletUriComponentsBuilder
                         .fromCurrentRequest()
                         .path("/{id}")

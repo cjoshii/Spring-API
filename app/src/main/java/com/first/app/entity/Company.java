@@ -1,5 +1,9 @@
 package com.first.app.entity;
 
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -18,6 +22,18 @@ public class Company {
 
     @Column(name = "description", length = 1000, nullable = true)
     private String description;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "company")
+    private List<Job> jobs; 
+
+    public List<Job> getJobs() {
+        return jobs;
+    }
+
+    public void setJobs(List<Job> jobs) {
+        this.jobs = jobs;
+    }
 
     public Long getId() {
         return Id;
