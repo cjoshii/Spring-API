@@ -1,26 +1,11 @@
 package com.first.app.dto;
 
-import java.util.List;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 public class CompanyDTO {
 
     private long id;
     private String name;
     private String location;
     private String description;
-
-    @JsonIgnore
-    private List<JobDTO> jobs;
-
-    public List<JobDTO> getJobs() {
-        return jobs;
-    }
-
-    public void setJobs(List<JobDTO> jobs) {
-        this.jobs = jobs;
-    }
 
     public long getId() {
         return id;
