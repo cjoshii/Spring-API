@@ -40,4 +40,10 @@ public class JobServiceImpl implements JobService {
                                                 .and(JobSpecification.hasLocation(location));
         return jobRepository.findAll(spec);
     }
+
+    @Override
+    public Boolean DeleteJob(long id) {
+        jobRepository.deleteById(id);
+        return true;
+    }
 }

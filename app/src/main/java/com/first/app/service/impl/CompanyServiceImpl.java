@@ -41,4 +41,10 @@ public class CompanyServiceImpl implements CompanyService {
 
         return companyRepository.findAll(spec);
     }
+
+    @Override
+    public Boolean DeleteCompany(long id) {
+        companyRepository.deleteById(id);
+        return true;
+    }
 }

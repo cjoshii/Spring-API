@@ -13,5 +13,7 @@ public interface CompanyService {
     public List<Company> GetAll();
 
     public List<Company> SearchCompanies(String name, String location, String description);
+
+    public Boolean DeleteCompany(long id);
     
 }

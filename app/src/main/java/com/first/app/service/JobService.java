@@ -13,5 +13,6 @@ public interface JobService {
     public List<Job> GetAll();
 
     public List<Job> SearchJobs(String title, String location, String description);
-    
+
+    public Boolean DeleteJob(long id);
 }
